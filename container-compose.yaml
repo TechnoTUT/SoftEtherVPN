@@ -1,0 +1,11 @@
+services:
+  vpn:
+    image: ghcr.io/technotut/softethervpn:main
+    container_name: vpn
+    ports:
+     - "443:443"
+    restart: unless-stopped
+    volumes:
+      - vpn-data:/usr/local/vpnserver
+volumes:
+  vpn-data:

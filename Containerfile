@@ -18,7 +18,6 @@ RUN apt-get update -y && apt-get install -y build-essential curl \
 
 FROM debian:12-slim
 COPY --from=0 /usr/local/vpnserver /usr/local/vpnserver
-COPY setup.sh /usr/local/vpnserver/setup.sh
 WORKDIR /usr/local/vpnserver
 RUN (echo 3; echo "check"; echo "exit") | ./vpncmd
 CMD [ "/usr/local/vpnserver/vpnserver", "execsvc" ]
